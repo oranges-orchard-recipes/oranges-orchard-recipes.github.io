@@ -97,14 +97,13 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
-  align-items: flex-start; /* Align cards to the top */
+  justify-content: flex-start; /* align cards to the left, no centering */
 }
 
-/* Individual cards */
+/* Individual cards: exactly 2 per row */
 .card {
   background-color: #fff7f0;
-  flex: 0 1 calc(50% - 20px); /* force 2 per row */
+  flex: 1 1 calc(50% - 20px); /* each takes ~50% */
   max-width: calc(50% - 20px);
   display: flex;
   flex-direction: column;
@@ -143,6 +142,7 @@ nav a:hover {
 .card p {
   padding: 0 15px 15px 15px;
   font-size: 1rem;
+  text-align: justify;
 }
 
 /* ===== Contact Section ===== */
@@ -203,7 +203,8 @@ footer .social-links img {
     font-size: 2rem;
   }
   .card {
-    flex: 1 1 100%;
+    flex: 1 1 100%;  /* full width when stacked */
+    max-width: 100%;
   }
   nav {
     gap: 10px;
@@ -235,6 +236,7 @@ footer .social-links img {
 footer p {
   text-align: justify;
 }
+
 
 
 
