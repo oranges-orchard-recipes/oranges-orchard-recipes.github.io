@@ -97,14 +97,13 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start; /* align cards to the left, no centering */
+  justify-content: space-between; /* ensures even spacing */
 }
 
 /* Individual cards: exactly 2 per row */
 .card {
   background-color: #fff7f0;
-  flex: 1 1 calc(50% - 20px); /* each takes ~50% */
-  max-width: calc(50% - 20px);
+  width: calc(50% - 20px); /* 2 per row */
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -120,12 +119,6 @@ nav a:hover {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
-  flex-shrink: 0; /* Prevent shrinking so all images stay aligned */
-}
-
-.cards-container .card:last-child {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .card figcaption {
@@ -159,6 +152,10 @@ nav a:hover {
   color: #ff6600;
 }
 
+.rect-card p {
+  text-align: justify;
+}
+
 /* ===== Footer ===== */
 footer {
   background-color: #333;
@@ -173,6 +170,7 @@ footer h3 {
 
 footer p, footer a {
   color: white;
+  text-align: justify;
 }
 
 footer a:hover {
@@ -194,7 +192,7 @@ footer .social-links img {
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
   .card {
-    flex: 1 1 45%;
+    width: calc(50% - 20px); /* still 2 per row */
   }
 }
 
@@ -203,8 +201,7 @@ footer .social-links img {
     font-size: 2rem;
   }
   .card {
-    flex: 1 1 100%;  /* full width when stacked */
-    max-width: 100%;
+    width: 100%; /* stack into one column */
   }
   nav {
     gap: 10px;
@@ -223,22 +220,3 @@ footer .social-links img {
     font-size: 0.9rem;
   }
 }
-
-/* Ensure 2 cards per row on desktop */
-.card {
-  flex: 0 1 calc(50% - 20px);
-  max-width: calc(50% - 20px);
-}
-
-/* Justify body text */
-.card p,
-.rect-card p,
-footer p {
-  text-align: justify;
-}
-
-
-
-
-
-
