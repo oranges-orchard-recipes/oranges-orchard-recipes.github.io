@@ -104,7 +104,8 @@ nav a:hover {
 /* Individual cards */
 .card {
   background-color: #fff7f0;
-  flex: 1 1 calc(50% - 20px); /* two cards per row */
+  flex: 0 1 calc(50% - 20px); /* force 2 per row */
+  max-width: calc(50% - 20px);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -220,6 +221,19 @@ footer .social-links img {
     padding: 12px 20px;
     font-size: 0.9rem;
   }
+}
+
+/* Ensure 2 cards per row on desktop */
+.card {
+  flex: 0 1 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+/* Justify body text */
+.card p,
+.rect-card p,
+footer p {
+  text-align: justify;
 }
 
 
