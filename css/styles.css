@@ -97,13 +97,13 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; /* ensures even spacing */
+  justify-content: space-between;
 }
 
-/* Individual cards: exactly 2 per row */
+/* Individual cards: 3 per row */
 .card {
   background-color: #fff7f0;
-  width: calc(50% - 20px); /* 2 per row */
+  width: calc(33.333% - 20px); /* 3 cards per row */
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -192,7 +192,7 @@ footer .social-links img {
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
   .card {
-    width: calc(50% - 20px); /* still 2 per row */
+    width: calc(50% - 20px); /* 2 per row */
   }
 }
 
@@ -201,7 +201,7 @@ footer .social-links img {
     font-size: 2rem;
   }
   .card {
-    width: 100%; /* stack into one column */
+    width: 100%; /* stack 1 per row */
   }
   nav {
     gap: 10px;
