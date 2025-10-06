@@ -1,0 +1,3 @@
+# Force correct content types for important SEO files
+sitemap.xml text/xml
+robots.txt text/plain
