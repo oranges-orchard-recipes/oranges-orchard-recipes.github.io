@@ -69,7 +69,7 @@ header .cta-btn:hover {
 }
 
 /* ===== Navigation ===== */
-nav {
+/*nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -77,13 +77,35 @@ nav {
   background: #fff7f0;
   padding: 15px 0;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}*/
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white; /* changed from soft cream to white */
+  padding: 10px 40px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
 }
 
-nav a {
+
+ nav a {
   font-weight: bold;
   color: #333;
   padding: 8px 12px;
   transition: color 0.3s;
+}
+
+nav .nav-logo img {
+  width: 120px;
+  height: auto;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
 }
 
 nav a:hover {
@@ -144,6 +166,12 @@ nav a:hover {
   text-align: justify;
 }
 
+/* Last card full width if odd number of cards */
+.cards-container .card:last-child:nth-child(odd) {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
 /* ===== Contact Section ===== */
 .rect-card {
   background-color: #fff7f0;
@@ -199,6 +227,8 @@ footer .social-links img {
   height: 35px;
 }
 
+
+
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
   .card {
@@ -232,5 +262,6 @@ footer .social-links img {
     font-size: 0.9rem;
   }
 }
+
 
 
