@@ -35,22 +35,30 @@ header .banner-img {
   filter: brightness(70%);
 }
 
+
 header .header-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.3); /* semi-transparent glass effect */
+  padding: 20px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* optional blur for that glass effect */
 }
 
+/* Update header font color & style */
 header h1 {
-  font-family: 'Bangers', cursive;
+  font-family: 'Fredoka One', cursive;
   font-size: 3rem;
+  color: #000000; /* real black */
   margin: 0 10px;
 }
 
 header p {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  margin-top: 10px;
+  color: #000; /* darker for contrast */
 }
 
 header .cta-btn {
@@ -110,6 +118,18 @@ nav .nav-links {
 
 nav a:hover {
   color: #ff6600;
+}
+
+nav a:last-child {
+  background-color: #ff6600; /* orange */
+  color: white;
+  border-radius: 5px;
+  padding: 8px 16px;
+  transition: background 0.3s;
+}
+
+nav a:last-child:hover {
+  background-color: #ff9900; /* lighter orange on hover */
 }
 
 /* ===== Main Content ===== */
@@ -262,6 +282,7 @@ footer .social-links img {
     font-size: 0.9rem;
   }
 }
+
 
 
 
