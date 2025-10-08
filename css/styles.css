@@ -51,14 +51,14 @@ header .header-content {
 header h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 3rem;
-  color: #000000; /* real black */
+  color: #ffffff; /* white */
   margin: 0 10px;
 }
 
 header p {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  color: #000; /* darker for contrast */
+  color: #fff; /* darker for contrast */
 }
 
 header .cta-btn {
@@ -92,7 +92,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white; /* changed from soft cream to white */
+  background: #fffaf3; /* soft cream */
   padding: 10px 40px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   flex-wrap: wrap;
@@ -282,6 +282,7 @@ footer .social-links img {
     font-size: 0.9rem;
   }
 }
+
 
 
 
