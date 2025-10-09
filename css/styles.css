@@ -8,7 +8,7 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   margin: 0;
   line-height: 1.6;
-  background-color: #fffaf3; /* soft cream background */
+  background-color: #fffaf3;
   color: #333;
 }
 
@@ -21,7 +21,72 @@ img {
   display: block;
 }
 
+/* ===== Navigation ===== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 40px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+nav .nav-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Links container */
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #333;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+/* “Contact Us” button */
+nav a:last-child {
+  background-color: #ff6600;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 16px;
+  transition: background 0.3s;
+}
+
+nav a:last-child:hover {
+  background-color: #ff9900;
+}
+
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  background: #333;
+  width: 25px;
+  height: 3px;
+  border-radius: 3px;
+}
+
 /* ===== Header & Banner ===== */
+
 header {
   position: relative;
   text-align: center;
@@ -35,30 +100,28 @@ header .banner-img {
   filter: brightness(70%);
 }
 
-
 header .header-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3); /* semi-transparent glass effect */
+  background: rgba(255, 255, 255, 0.3);
   padding: 20px 30px;
   border-radius: 15px;
-  backdrop-filter: blur(5px); /* optional blur for that glass effect */
+  backdrop-filter: blur(5px);
 }
 
-/* Update header font color & style */
 header h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 3rem;
-  color: #ffffff; /* white */
+  color: #ffffff;
   margin: 0 10px;
 }
 
 header p {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  color: #fff; /* darker for contrast */
+  color: #fff;
 }
 
 header .cta-btn {
@@ -76,63 +139,8 @@ header .cta-btn:hover {
   background-color: #ff9900;
 }
 
-/* ===== Navigation ===== */
-/*nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  background: #fff7f0;
-  padding: 15px 0;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}*/
-
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fffaf3; /* soft cream */
-  padding: 10px 40px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  flex-wrap: wrap;
-}
-
-
- nav a {
-  font-weight: bold;
-  color: #333;
-  padding: 8px 12px;
-  transition: color 0.3s;
-}
-
-nav .nav-logo img {
-  width: 120px;
-  height: auto;
-}
-
-nav .nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-nav a:hover {
-  color: #ff6600;
-}
-
-nav a:last-child {
-  background-color: #ff6600; /* orange */
-  color: white;
-  border-radius: 5px;
-  padding: 8px 16px;
-  transition: background 0.3s;
-}
-
-nav a:last-child:hover {
-  background-color: #ff9900; /* lighter orange on hover */
-}
-
 /* ===== Main Content ===== */
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -147,11 +155,11 @@ nav a:last-child:hover {
   justify-content: flex-start;
 }
 
-/* Individual cards: 3 per row */
+/* Individual cards */
 .card {
   background-color: #fff7f0;
-   flex: 0 0 calc(50% - 20px); /* 2 per row */
-  max-width: calc(50% - 20px);
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -160,19 +168,12 @@ nav a:last-child:hover {
   margin-bottom: 20px;
 }
 
-/* Card image */
 .card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
-}
-
-.card figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  padding: 10px 15px;
 }
 
 .card h2 {
@@ -193,6 +194,7 @@ nav a:last-child:hover {
 }
 
 /* ===== Contact Section ===== */
+
 .rect-card {
   background-color: #fff7f0;
   padding: 30px;
@@ -211,6 +213,7 @@ nav a:last-child:hover {
 }
 
 /* ===== Footer ===== */
+
 footer {
   background-color: #333;
   color: white;
@@ -219,16 +222,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-footer h3 {
-  margin-top: 0;
-}
-
-footer p,
-footer a {
-  color: white;
-  text-align: center;
 }
 
 footer a:hover {
@@ -247,43 +240,81 @@ footer .social-links img {
   height: 35px;
 }
 
-
-
 /* ===== Responsive Design ===== */
+
+/* --- Tablets --- */
 @media (max-width: 1024px) {
   .card {
-    flex: 0 0 calc(50% - 20px); /* 2 per row */
+    flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
+  }
+
+  nav {
+    padding: 10px 20px;
   }
 }
 
+/* --- Mobile Screens --- */
 @media (max-width: 768px) {
+  header .banner-img {
+    height: 320px;
+  }
+
   header h1 {
     font-size: 2rem;
   }
+
+  header p {
+    font-size: 1rem;
+  }
+
   .card {
-    flex: 0 0 100%; /* full width */
+    flex: 0 0 100%;
     max-width: 100%;
   }
-  nav {
-    gap: 10px;
+
+  /* Hamburger menu visible */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide links until toggled */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a:last-child {
+    margin: 10px auto;
+    width: 80%;
   }
 }
 
+/* --- Small Mobile --- */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.5rem;
   }
-  header p {
-    font-size: 1rem;
-  }
+
   header .cta-btn {
     padding: 12px 20px;
     font-size: 0.9rem;
   }
+
+  nav .nav-logo img {
+    width: 90px;
+  }
 }
-
-
-
-
-
