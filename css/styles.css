@@ -1,5 +1,4 @@
 /* ===== Global Styles ===== */
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -22,7 +21,6 @@ img {
 }
 
 /* ===== Navigation ===== */
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -40,7 +38,6 @@ nav .nav-logo img {
   height: auto;
 }
 
-/* Links container */
 nav .nav-links {
   display: flex;
   gap: 20px;
@@ -57,7 +54,7 @@ nav a:hover {
   color: #ff6600;
 }
 
-/* “Contact Us” button */
+/* Contact Us button */
 nav a:last-child {
   background-color: #ff6600;
   color: white;
@@ -86,7 +83,6 @@ nav a:last-child:hover {
 }
 
 /* ===== Header & Banner ===== */
-
 header {
   position: relative;
   text-align: center;
@@ -140,14 +136,12 @@ header .cta-btn:hover {
 }
 
 /* ===== Main Content ===== */
-
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* Cards container */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -155,7 +149,6 @@ header .cta-btn:hover {
   justify-content: flex-start;
 }
 
-/* Individual cards */
 .card {
   background-color: #fff7f0;
   flex: 0 0 calc(33.333% - 20px);
@@ -187,14 +180,13 @@ header .cta-btn:hover {
   text-align: justify;
 }
 
-/* Last card full width if odd number of cards */
+/* Last card full width if odd */
 .cards-container .card:last-child:nth-child(odd) {
   flex: 0 0 100%;
   max-width: 100%;
 }
 
 /* ===== Contact Section ===== */
-
 .rect-card {
   background-color: #fff7f0;
   padding: 30px;
@@ -213,7 +205,6 @@ header .cta-btn:hover {
 }
 
 /* ===== Footer ===== */
-
 footer {
   background-color: #333;
   color: white;
@@ -242,7 +233,7 @@ footer .social-links img {
 
 /* ===== Responsive Design ===== */
 
-/* --- Tablets --- */
+/* --- Tablet --- */
 @media (max-width: 1024px) {
   .card {
     flex: 0 0 calc(50% - 20px);
@@ -268,23 +259,26 @@ footer .social-links img {
     font-size: 1rem;
   }
 
+  header .cta-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
   .card {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  /* Hamburger menu visible */
+  /* Navigation for mobile */
   .nav-toggle {
     display: flex;
   }
 
-  /* Hide links until toggled */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: white;
-    padding: 10px 0;
+    margin-top: 10px;
     border-top: 1px solid #eee;
   }
 
@@ -293,13 +287,13 @@ footer .social-links img {
   }
 
   .nav-links a {
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
   }
 
   nav a:last-child {
-    margin: 10px auto;
-    width: 80%;
+    width: 100%;
+    margin: 10px 0;
   }
 }
 
@@ -309,9 +303,13 @@ footer .social-links img {
     font-size: 1.5rem;
   }
 
-  header .cta-btn {
-    padding: 12px 20px;
+  header p {
     font-size: 0.9rem;
+  }
+
+  header .cta-btn {
+    padding: 10px 18px;
+    font-size: 0.8rem;
   }
 
   nav .nav-logo img {
