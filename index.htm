@@ -69,13 +69,14 @@
   gtag('config', 'G-6XZRYK2L1W');
 </script>
   <script>
-  const toggle = document.querySelector('.nav-toggle');
+  const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.querySelector('.nav-links');
 
-  toggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
 </script>
+
 
 </head>
 <body>
@@ -83,23 +84,22 @@
   <!-- Navigation -->
 <nav role="navigation">
   <div class="nav-logo">
-    <img src="img/oranges-orchards-logo.jpg" alt="Oranges Orchard Logo" title="Oranges Orchard">
-  </div>
-  <div class="nav-links">
-    <a href="#about">About Us</a>
-    <a href="#species">Orange Varieties</a>
-    <a href="#recipes">Orange Recipes</a>
-    <a href="#uses">Creative Citrus Uses</a>
-    <a href="#contact">Contact Us</a>
-  </div>
-</nav>
-
-  <div class="nav-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
+  <img src="img/orange-logo-placeholder.png" alt="Oranges Orchard Logo">
 </div>
 
+<div class="menu-toggle" id="mobile-menu">
+  ☰
+</div>
+
+<div class="nav-links">
+  <a href="#about">About Us</a>
+  <a href="#species">Orange Varieties</a>
+  <a href="#recipes">Orange Recipes</a>
+  <a href="#uses">Creative Citrus Uses</a>
+  <a href="#contact">Contact Us</a>
+</div>
+
+</nav>
 
 <!-- Header / Banner -->
 <header role="banner">
@@ -232,6 +232,7 @@
 
 </body>
 </html>
+
 
 
 
