@@ -68,6 +68,15 @@
 
   gtag('config', 'G-6XZRYK2L1W');
 </script>
+  <script>
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </head>
 <body>
 
@@ -84,6 +93,13 @@
     <a href="#contact">Contact Us</a>
   </div>
 </nav>
+
+  <div class="nav-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 
 <!-- Header / Banner -->
 <header role="banner">
@@ -216,6 +232,7 @@
 
 </body>
 </html>
+
 
 
 
