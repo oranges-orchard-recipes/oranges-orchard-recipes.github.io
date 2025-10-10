@@ -245,6 +245,14 @@ footer .social-links img {
   }
 }
 
+/* Hide hamburger icon on desktop and tablet */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+
 /* --- Mobile Screens --- */
 @media (max-width: 768px) {
   header .banner-img {
@@ -316,3 +324,4 @@ footer .social-links img {
     width: 90px;
   }
 }
+
