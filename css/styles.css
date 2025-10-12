@@ -134,24 +134,26 @@ header .cta-btn:hover {
   padding: 40px 20px;
 }
 
+/* Cards Container using CSS Grid for perfect alignment */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: flex-start;
-  align-items: stretch; /* makes all cards same height */
+  align-items: stretch; /* ensures all cards in a row are same height */
 }
 
 .card {
   background-color: #fff7f0;
-  flex: 0 0 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -159,14 +161,13 @@ header .cta-btn:hover {
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* Fixed heading height for alignment */
 .card h2 {
   color: #ff6600;
-  margin: 15px;
-  height: 50px; /* adjust for 2 lines */
+  margin: 10px 0;
+  height: 50px; /* fixed height for alignment */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -175,15 +176,10 @@ header .cta-btn:hover {
 }
 
 .card p {
-  padding: 0 15px 15px 15px;
+  padding: 0 0 10px 0;
   font-size: 1rem;
   text-align: justify;
-}
-
-/* Last card full width if odd */
-.cards-container .card:last-child:nth-child(odd) {
-  flex: 0 0 100%;
-  max-width: 100%;
+  flex-grow: 1; /* ensures text stretches for equal card height */
 }
 
 /* ===== Contact Section ===== */
@@ -235,11 +231,6 @@ footer .social-links img {
 
 /* --- Tablet Screens --- */
 @media (max-width: 1024px) {
-  .card {
-    flex: 0 0 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-
   nav {
     padding: 10px 20px;
   }
@@ -264,17 +255,17 @@ footer .social-links img {
     font-size: 0.9rem;
   }
 
-  .card {
-    flex: 0 0 100%;
-    max-width: 100%;
+  /* Make cards full-width on mobile */
+  .cards-container {
+    grid-template-columns: 1fr;
   }
 
-  /* Show hamburger toggle on mobile */
+  /* Show hamburger toggle */
   .menu-toggle {
     display: block;
   }
 
-  /* Hide nav links by default on mobile */
+  /* Hide nav links by default */
   .nav-links {
     display: none;
     flex-direction: column;
