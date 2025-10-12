@@ -67,20 +67,6 @@ nav a:last-child:hover {
   background-color: #ff9900;
 }
 
-/* Hamburger Menu */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.nav-toggle span {
-  background: #333;
-  width: 25px;
-  height: 3px;
-  border-radius: 3px;
-}
 
 /* ===== Header & Banner ===== */
 header {
@@ -251,7 +237,19 @@ footer .social-links img {
     display: none !important;
   }
 }
-
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.nav-toggle span {
+  background: #333;
+  width: 25px;
+  height: 3px;
+  border-radius: 3px;
+}
 
 /* --- Mobile Screens --- */
 @media (max-width: 768px) {
@@ -324,4 +322,5 @@ footer .social-links img {
     width: 90px;
   }
 }
+
 
