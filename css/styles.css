@@ -67,6 +67,20 @@ nav a:last-child:hover {
   background-color: #ff9900;
 }
 
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  background: #333;
+  width: 25px;
+  height: 3px;
+  border-radius: 3px;
+}
 
 /* ===== Header & Banner ===== */
 header {
@@ -219,7 +233,7 @@ footer .social-links img {
 
 /* ===== Responsive Design ===== */
 
-/* --- Tablet --- */
+/* --- Tablet Screens --- */
 @media (max-width: 1024px) {
   .card {
     flex: 0 0 calc(50% - 20px);
@@ -229,26 +243,6 @@ footer .social-links img {
   nav {
     padding: 10px 20px;
   }
-}
-
-/* Hide hamburger icon on desktop and tablet */
-@media (min-width: 769px) {
-  .nav-toggle {
-    display: none !important;
-  }
-}
-/* Hamburger Menu */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-.nav-toggle span {
-  background: #333;
-  width: 25px;
-  height: 3px;
-  border-radius: 3px;
 }
 
 /* --- Mobile Screens --- */
@@ -275,11 +269,12 @@ footer .social-links img {
     max-width: 100%;
   }
 
-  /* Navigation for mobile */
+  /* Show hamburger toggle */
   .nav-toggle {
     display: flex;
   }
 
+  /* Hide nav links by default on mobile */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -288,6 +283,7 @@ footer .social-links img {
     border-top: 1px solid #eee;
   }
 
+  /* Show nav links when active */
   .nav-links.active {
     display: flex;
   }
@@ -303,7 +299,7 @@ footer .social-links img {
   }
 }
 
-/* --- Small Mobile --- */
+/* --- Small Mobile Screens --- */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.5rem;
@@ -322,5 +318,3 @@ footer .social-links img {
     width: 90px;
   }
 }
-
-
