@@ -83,10 +83,20 @@ nav a:last-child:hover {
 }
 
 /* ===== Header & Banner ===== */
+
+header h1, header h2, header p {
+  margin: 0;
+}
+
 header {
   position: relative;
   text-align: center;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  overflow: hidden;
 }
 
 header .banner-img {
@@ -105,6 +115,8 @@ header .header-content {
   padding: 20px 30px;
   border-radius: 15px;
   backdrop-filter: blur(5px);
+  text-align: center;
+  max-width: 800px;
 }
 
 header h1 {
@@ -318,3 +330,4 @@ footer .social-links img {
     width: 90px;
   }
 }
+
