@@ -1,179 +1,184 @@
-/* ===== Global Styles ===== */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* =========================
+   Oranges Orchard Recipes
+   Global Stylesheet (updated)
+   - Hero: 75vh with centered overlay + white blurred box
+   - Smooth scroll enabled
+   - Cleaner spacing & responsive fixes
+   ========================= */
+
+/* ---------- CSS Variables ---------- */
+:root{
+  --brand: #ff6600;
+  --brand-2: #ff9900;
+  --bg: #fffaf3;
+  --card: #fff7f0;
+  --text: #333333;
+  --white: #ffffff;
+  --shadow-sm: 0 3px 6px rgba(0,0,0,.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,.12);
+  --shadow-lg: 0 6px 12px rgba(0,0,0,.14);
+  --radius: 12px;
 }
 
-body {
+/* ---------- Global ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body{
   font-family: 'Montserrat', Arial, sans-serif;
   margin: 0;
   line-height: 1.6;
-  background-color: #fffaf3;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-a {
-  text-decoration: none;
+a{ text-decoration: none; color: inherit; }
+a:focus-visible, button:focus-visible{
+  outline: 3px solid var(--brand-2);
+  outline-offset: 2px;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img{ max-width: 100%; display: block; }
 
-/* ===== Navigation ===== */
-nav {
+/* ---------- Navigation ---------- */
+nav{
+  position: sticky;          /* keeps nav visible while scrolling */
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: var(--white);
   padding: 12px 40px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
-  position: relative;
-  z-index: 10;
 }
 
-nav .nav-logo img {
-  width: 120px;
-  height: auto;
-}
+nav .nav-logo img{ width: 120px; height: auto; }
 
-nav .nav-links {
+nav .nav-links{
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
-nav a {
-  font-weight: bold;
-  color: #333;
+nav a{
+  font-weight: 700;
+  color: var(--text);
   padding: 8px 12px;
-  transition: color 0.3s;
+  transition: color .25s ease;
 }
-
-nav a:hover {
-  color: #ff6600;
-}
+nav a:hover{ color: var(--brand); }
 
 /* Contact Us button */
-nav a:last-child {
-  background-color: #ff6600;
-  color: white;
-  border-radius: 5px;
+nav a:last-child{
+  background-color: var(--brand);
+  color: var(--white);
+  border-radius: 8px;
   padding: 8px 16px;
-  transition: background 0.3s;
+  transition: background .25s ease, transform .05s ease;
 }
+nav a:last-child:hover{ background-color: var(--brand-2); }
+nav a:last-child:active{ transform: translateY(1px); }
 
-nav a:last-child:hover {
-  background-color: #ff9900;
-}
-
-/* Hamburger Menu */
-.nav-toggle {
+/* Hamburger (mobile) */
+.nav-toggle{
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
 }
-
-.nav-toggle span {
-  background: #333;
-  width: 25px;
-  height: 3px;
-  border-radius: 3px;
+.nav-toggle span{
+  background: var(--text);
+  width: 26px; height: 3px; border-radius: 3px;
 }
 
-/* ===== Header & Banner ===== */
-
-header h1, header h2, header p {
-  margin: 0;
-}
-
-header {
+/* ---------- Hero ---------- */
+header{
   position: relative;
   text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+  color: var(--white);
+  height: 75vh;             /* bigger hero as requested */
+  min-height: 520px;        /* keeps it tall on large screens */
   overflow: hidden;
 }
 
-header .banner-img {
+/* Background image fills hero */
+header .banner-img{
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(70%);
+  filter: brightness(65%);  /* darken for contrast */
 }
 
-header .header-content {
+/* Centered content with white blurred box kept */
+header .header-content{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
-  padding: 20px 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(5px);
-  text-align: center;
-  max-width: 800px;
+  background: rgba(255,255,255,.35);   /* keep white translucent box */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 32px 42px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  max-width: min(900px, 92vw);
 }
 
-header h1 {
+header h1{
   font-family: 'Fredoka One', cursive;
-  font-size: 3rem;
-  color: #ffffff;
-  margin: 0 10px;
+  font-size: clamp(28px, 4.2vw, 56px); /* responsive */
+  color: var(--white);
+  margin: 0 0 10px 0;
 }
 
-header p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  color: #fff;
+header p{
+  font-size: clamp(14px, 1.5vw, 20px);
+  color: var(--white);
+  margin: 10px 0 0 0;
 }
 
-header .cta-btn {
+header .cta-btn{
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  background-color: #ff6600;
-  color: white;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: background 0.3s;
+  margin-top: 22px;
+  padding: 14px 28px;
+  background-color: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 999px;
+  transition: background .25s ease, transform .05s ease;
 }
+header .cta-btn:hover{ background-color: var(--brand-2); }
+header .cta-btn:active{ transform: translateY(1px); }
 
-header .cta-btn:hover {
-  background-color: #ff9900;
-}
-
-/* ===== Main Content ===== */
-.container {
+/* ---------- Main Content ---------- */
+.container{
   max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+  margin: 0 auto;
+  padding: 48px 20px;
 }
 
-.cards-container {
+.cards-container{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
 }
 
-.card {
-  background-color: #fff7f0;
+.card{
+  background-color: var(--card);
   flex: 0 0 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
   padding: 20px;
   margin-bottom: 20px;
 }
 
-.card img {
+.card img{
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -181,153 +186,137 @@ header .cta-btn:hover {
   margin-bottom: 15px;
 }
 
-.card h2 {
-  color: #ff6600;
-  margin: 15px;
+.card h2{
+  color: var(--brand);
+  margin: 10px 15px;
+  line-height: 1.3;
 }
 
-.card p {
+.card p{
   padding: 0 15px 15px 15px;
   font-size: 1rem;
   text-align: justify;
 }
 
-/* Last card full width if odd */
-.cards-container .card:last-child:nth-child(odd) {
+/* Make last card full-width if odd */
+.cards-container .card:last-child:nth-child(odd){
   flex: 0 0 100%;
   max-width: 100%;
 }
 
-/* ===== Contact Section ===== */
-.rect-card {
-  background-color: #fff7f0;
+/* ---------- Contact / CTA Block ---------- */
+.rect-card{
+  background-color: var(--card);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-lg);
   margin-top: 40px;
   text-align: center;
 }
+.rect-card h2{ color: var(--brand); margin-top: 0; }
+.rect-card p{ text-align: justify; }
 
-.rect-card h2 {
-  color: #ff6600;
-}
-
-.rect-card p {
-  text-align: justify;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #333;
-  color: white;
+/* ---------- Footer ---------- */
+footer{
+  background-color: #2c2c2c;
+  color: var(--white);
   text-align: center;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-footer a:hover {
-  color: #ff9900;
-}
-
-footer .social-links {
+footer a{ color: var(--white); }
+footer a:hover{ color: var(--brand-2); }
+footer .social-links{
   margin: 15px 0;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
+footer .social-links img{ width: 35px; height: 35px; }
 
-footer .social-links img {
-  width: 35px;
-  height: 35px;
-}
+/* =========================
+   Responsive
+   ========================= */
 
-/* ===== Responsive Design ===== */
-
-/* --- Tablet Screens --- */
-@media (max-width: 1024px) {
-  .card {
+/* --- Large tablets --- */
+@media (max-width: 1024px){
+  nav{ padding: 10px 20px; }
+  .card{
     flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
   }
-
-  nav {
-    padding: 10px 20px;
-  }
 }
 
-/* --- Mobile Screens --- */
-@media (max-width: 768px) {
-  header .banner-img {
-    height: 320px;
+/* --- Tablets & Mobile --- */
+@media (max-width: 768px){
+  /* Hero gets a bit shorter but still bold */
+  header{
+    height: 60vh;
+    min-height: 420px;
   }
-
-  header h1 {
-    font-size: 2rem;
+  header .header-content{
+    padding: 24px 28px;
+    max-width: 92vw;
   }
+  header h1{ font-size: clamp(24px, 6vw, 40px); }
+  header p{ font-size: clamp(13px, 3.5vw, 18px); }
 
-  header p {
-    font-size: 1rem;
-  }
-
-  header .cta-btn {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-  }
-
-  .card {
+  /* Cards stack */
+  .card{
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  /* Show hamburger toggle */
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Hide nav links by default on mobile */
-  .nav-links {
+  /* Mobile nav */
+  .nav-toggle{ display: flex; }
+  .nav-links{
     display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
     border-top: 1px solid #eee;
+    padding-top: 8px;
   }
-
-  /* Show nav links when active */
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
+  .nav-links.active{ display: flex; }
+  .nav-links a{
     padding: 10px 0;
     text-align: center;
   }
-
-  nav a:last-child {
+  nav a:last-child{
     width: 100%;
     margin: 10px 0;
   }
 }
 
-/* --- Small Mobile Screens --- */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
+/* --- Small Mobile --- */
+@media (max-width: 480px){
+  header{
+    height: 56vh;
+    min-height: 360px;
   }
-
-  header p {
-    font-size: 0.9rem;
-  }
-
-  header .cta-btn {
-    padding: 10px 18px;
-    font-size: 0.8rem;
-  }
-
-  nav .nav-logo img {
-    width: 90px;
-  }
+  header .header-content{ padding: 18px 20px; }
+  header h1{ font-size: clamp(20px, 7vw, 32px); }
+  header p{ font-size: clamp(12px, 3.8vw, 16px); }
+  nav .nav-logo img{ width: 90px; }
 }
 
+/* =========================
+   Utility / Fixes
+   ========================= */
+
+/* Remove default top margins that can push hero down if headings are added */
+header h1, header h2, header p{ margin-top: 0; }
+
+/* Ensure no stray spacing collapses create gaps above hero */
+header::before{
+  content: "";
+  display: block;
+}
+
+/* Optional: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation: none !important; transition: none !important; }
+}
