@@ -147,6 +147,21 @@
   });
 </script>
 
+	<script>
+function toggleText(button) {
+  const card = button.closest(".card");
+  const fullText = card.querySelector(".full-text");
+
+  if (fullText.classList.contains("hidden")) {
+    fullText.classList.remove("hidden");
+    button.textContent = "Read Less";
+  } else {
+    fullText.classList.add("hidden");
+    button.textContent = "Read More";
+  }
+}
+</script>
+
 
 </head>
 <body>
@@ -193,7 +208,9 @@
         <img src="img/peeled-orange.jpg" alt="Juicy peeled orange segments on a rustic wooden plate" title="Fresh Orange Varieties">
         <figcaption>From tangy blood oranges to seedless mandarins and navel oranges, each variety offers a different flavor profile, acidity level, and ideal recipe use. Blood oranges are rich in antioxidants and perfect for homemade marmalades and citrus cakes, while mandarins offer natural sweetness that works well in smoothies, fresh juice blends, and kid-friendly snacks.</figcaption>
       </figure>
-      <p>I grew up in a family-run orange orchard, and those years taught me how variety, ripeness, and seasonality affect both taste and nutrition. Today, I use that experience to help home cooks choose the best citrus for baking, juicing, zesting, or snacking. If you're new to cooking with different types of oranges, explore our Easy Orange Recipes section below for ideas you can start with right away.</p>
+		<p class="preview-text">I grew up in a family-run orange orchard, and those years taught me how variety, ripeness, and seasonality affect both taste and nutrition.</p> 
+		<p class="full-text hidden">Today, I use that experience to help home cooks choose the best citrus for baking, juicing, zesting, or snacking. If you're new to cooking with different types of oranges, explore our Easy Orange Recipes section below for ideas you can start with right away.</p>
+		<button class="read-more-btn" onclick="toggleText(this)">Read More</button>
     </div>
 
     <!-- Card 2: Easy Orange Recipes -->
@@ -203,8 +220,9 @@
         <img src="img/orange-dessert-juice.jpg" alt="Orange pie dessert and a glass of freshly squeezed citrus juice on a kitchen counter" title="Orange Recipes">
         <figcaption>Delicious citrus desserts and refreshing orange drinks that are simple to make at home.</figcaption>
       </figure>
-      <p>Fresh orange juice has always been a staple in our orchard kitchen, but over time I started developing easy orange recipes that go far beyond juicing. Today, I create beginner-friendly citrus desserts, vitamin-rich orange smoothies, zest-infused cakes, candied orange peels, and refreshing orange drink recipes that take 20 minutes or less to make at home. Every recipe on this site is tested for flavor, texture, and natural sweetness, using real seasonal oranges instead of processed concentrates.
-Whether you're looking for immune-boosting breakfast smoothies, no-bake citrus desserts, or simple orange glaze ideas for baking, you’ll find step-by-step guides in the **Citrus Drinks & Desserts** section below. These recipes are designed for home cooks who want fresh ingredients, bold citrus flavor, and proven health benefits without complicated techniques.</p>
+        <p class="preview-text">Fresh orange juice has always been a staple in our orchard kitchen, but over time I started developing easy orange recipes that go far beyond juicing.</p> 
+		<p class="full-text hidden">Today, I create beginner-friendly citrus desserts, vitamin-rich orange smoothies, zest-infused cakes, candied orange peels, and refreshing orange drink recipes that take 20 minutes or less to make at home. Every recipe on this site is tested for flavor, texture, and natural sweetness, using real seasonal oranges instead of processed concentrates.Whether you're looking for immune-boosting breakfast smoothies, no-bake citrus desserts, or simple orange glaze ideas for baking, you’ll find step-by-step guides in the **Citrus Drinks & Desserts** section below. These recipes are designed for home cooks who want fresh ingredients, bold citrus flavor, and proven health benefits without complicated techniques.</p>
+		<button class="read-more-btn" onclick="toggleText(this)">Read More</button>
     </div>
 
     <!-- Card 3: Creative Citrus Uses -->
@@ -214,9 +232,11 @@ Whether you're looking for immune-boosting breakfast smoothies, no-bake citrus d
         <img src="img/pile-of-oranges.jpg" alt="A collection of fresh oranges arranged on a table ready for cooking, zesting, and crafts" title="Creative Uses for Oranges">
         <figcaption>Oranges can be used for natural fragrances, teas, and household projects, expanding their versatility.</figcaption>
       </figure>
-      <p>Oranges aren’t just delicious; they’re one of the most versatile fruits you can use in daily life. Orange peels can be dried for immune-boosting herbal teas, simmered into natural home fragrances, blended into DIY citrus cleaners, or zested into baked goods for extra flavor and vitamin C. Orange oil is also used in skincare, aromatherapy, and eco-friendly cleaning products because of its antimicrobial properties and refreshing scent.
+      <p class="preview-text">Oranges aren’t just delicious; they’re one of the most versatile fruits you can use in daily life. Orange peels can be dried for immune-boosting herbal teas, simmered into natural home fragrances, blended into DIY citrus cleaners, or zested into baked goods for extra flavor and vitamin C.</p> 
+	  <p class="full-text hidden">Orange oil is also used in skincare, aromatherapy, and eco-friendly cleaning products because of its antimicrobial properties and refreshing scent.
 If you’re interested in reducing waste and getting more value from every orange, explore the **Creative Citrus Uses** section below, where I share step-by-step tutorials for making dried peel tea, orange sugar scrubs, stovetop simmer blends, and natural kitchen cleaners — all made from real fruit, not synthetic fragrance oils.</p>
-    </div>
+    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+	</div>
 	  
      <!-- Card 4: Nutrition and Research Insights on Oranges -->
 	<div class="card" id="nutrition">
@@ -225,9 +245,10 @@ If you’re interested in reducing waste and getting more value from every orang
       		<img src="img/orange-research.jpg" alt="Scientist examining orange slices for vitamin content" title="Research on Orange Nutrition">
      	    <figcaption>Research carried out on oranges. <a href="https://scitechdaily.com/a-new-superfruit-scientists-discover-simple-trick-to-make-blood-oranges-healthier/" target="_blank"></a> </figcaption>
         </figure>
-        <p>Modern nutrition research continues to support the health value of oranges. According to the <a href="https://fdc.nal.usda.gov/fdc-app.html#/food-details/1102642/nutrients" target="_blank">U.S. Department of Agriculture (USDA)</a>, a medium-sized orange provides over 70 mg of vitamin C, along with essential minerals such as potassium and folate. Studies published in the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5872783/" target="_blank">National Center for Biotechnology Information (NCBI)</a> show that regular citrus intake can reduce oxidative stress and support cardiovascular health.</p>
-        <p>In addition, the <a href="https://www.hsph.harvard.edu/nutritionsource/food-features/oranges/" target="_blank">Harvard T.H. Chan School of Public Health</a> emphasizes oranges’ role in maintaining immune function and skin vitality. These findings reinforce our orchard-to-table philosophy — every recipe here is rooted in evidence-based wellness and inspired by generations of family tradition.</p>
-  	</div>
+        <p class="preview-text">Modern nutrition research continues to support the health value of oranges. According to the <a href="https://fdc.nal.usda.gov/fdc-app.html#/food-details/1102642/nutrients" target="_blank">U.S. Department of Agriculture (USDA)</a>, a medium-sized orange provides over 70 mg of vitamin C, along with essential minerals such as potassium and folate.</p> 
+		<p class="full-text hidden">Studies published in the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5872783/" target="_blank">National Center for Biotechnology Information (NCBI)</a> show that regular citrus intake can reduce oxidative stress and support cardiovascular health.In addition, the <a href="https://www.hsph.harvard.edu/nutritionsource/food-features/oranges/" target="_blank">Harvard T.H. Chan School of Public Health</a> emphasizes oranges’ role in maintaining immune function and skin vitality. These findings reinforce our orchard-to-table philosophy — every recipe here is rooted in evidence-based wellness and inspired by generations of family tradition.</p>
+  	<button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+	</div>
 	  
     <!-- Card 5: Health Benefits -->
     <div class="card">
@@ -236,8 +257,10 @@ If you’re interested in reducing waste and getting more value from every orang
         <img src="img/orange-snacks.jpg" alt="Fresh orange slices highlighting their rich vitamin content and natural texture" title="Oranges for Health">
         <figcaption>Oranges provide essential vitamins and antioxidants, supporting overall health and vitality.</figcaption>
       </figure>
-      <p>Oranges are naturally rich in vitamin C, fiber, and antioxidants. Regular consumption can support immune function, promote heart health, and improve skin texture. Drawing on both personal experience and scientific studies, I integrate oranges into everyday meals and drinks to maximize health benefits. Recipes in Oranges Orchard Recipes are designed to deliver both flavor and nutrition in each bite.</p>
-    </div>
+      <p class="preview-text">Oranges are naturally rich in vitamin C, fiber, and antioxidants. Regular consumption can support immune function, promote heart health, and improve skin texture.</p> 
+	<p class="full-text hidden">Drawing on both personal experience and scientific studies, I integrate oranges into everyday meals and drinks to maximize health benefits. Recipes in Oranges Orchard Recipes are designed to deliver both flavor and nutrition in each bite.</p>
+    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+	</div>
 
     <!-- Card 6: Seasonal Tips -->
     <div class="card">
@@ -246,8 +269,10 @@ If you’re interested in reducing waste and getting more value from every orang
         <img src="img/orange-harvest.jpg" alt="Oranges being carefully harvested from orchard trees during peak season" title="Orchard Harvest Tips">
         <figcaption>Selecting the ripest oranges ensures maximum flavor and freshness in every recipe.</figcaption>
       </figure>
-      <p>Knowing when to harvest oranges makes all the difference. From my years managing orchard crops, I learned that picking fruit at peak ripeness ensures superior taste and texture. I also share storage techniques that extend freshness without sacrificing quality. Following these tips guarantees that each recipe benefits from the very best of the orchard, giving readers reliable guidance backed by experience.</p>
-    </div>
+      <p class="preview-text">Knowing when to harvest oranges makes all the difference. From my years managing orchard crops, I learned that picking fruit at peak ripeness ensures superior taste and texture.</p> 
+	<p class="full-text hidden">I also share storage techniques that extend freshness without sacrificing quality. Following these tips guarantees that each recipe benefits from the very best of the orchard, giving readers reliable guidance backed by experience.</p>
+    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+	</div>
 
     <!-- Card 7: Citrus Inspirations and Illustrations -->
     <div class="card">
@@ -256,18 +281,20 @@ If you’re interested in reducing waste and getting more value from every orang
         <img src="img/orange-vector-illustration.png" alt="Bright orange vector illustration inspiring culinary and creative projects" title="Citrus Art">
         <figcaption>Illustrations and visual designs provide inspiration for menus, recipes, and creative citrus projects.</figcaption>
       </figure>
-      <p>Beyond the kitchen, I use illustrations to express a passion for citrus. Graphic designs and vector artwork complement recipes, inspire menus, and elevate creative projects. By combining personal experience with visual storytelling, I convey the joy of oranges in ways that go beyond taste alone, establishing Oranges Orchard Recipes as a trusted and engaging resource for enthusiasts.</p>
-    </div>
+     <p class="preview-text">Beyond the kitchen, I use illustrations to express a passion for citrus. Graphic designs and vector artwork complement recipes, inspire menus, and elevate creative projects.</p> 
+	<p class="full-text hidden">By combining personal experience with visual storytelling, I convey the joy of oranges in ways that go beyond taste alone, establishing Oranges Orchard Recipes as a trusted and engaging resource for enthusiasts.</p>
+    <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+	</div>
 
     <!-- Card 8: Charleston Gray Watermelon -->
 <div class="card">
   <h2>Seeking a New Flavor Adventure?</h2>
-  <p>
-    If you’re looking for a fresh perspective on heirloom produce, check out 
-    <a href="https://charleston-gray-watermelon.netlify.app/" target="_blank">Charleston Gray Watermelon | Heirloom Sweet Watermelon & Growing Tips</a>.
-    This seasoned Farmer share practical tips for growing this classic melon, creative recipes (including unique treats like watermelon cupcakes!), and engaging stories from the farm. It’s a welcoming resource for anyone curious about how this heritage fruit grows and how to enjoy it in delicious ways. 
+ <p class="preview-text">If you’re looking for a fresh perspective on heirloom produce, check out <a href="https://charleston-gray-watermelon.netlify.app/" target="_blank">Charleston Gray Watermelon | Heirloom Sweet Watermelon & Growing Tips</a>.
+    This seasoned Farmer share practical tips for growing this classic melon, creative recipes (including unique treats like watermelon cupcakes!), and engaging stories from the farm.</p>
+	 <p class="full-text hidden">It’s a welcoming resource for anyone curious about how this heritage fruit grows and how to enjoy it in delicious ways. 
     #WatermelonSeason #GrowWithCare
   </p>
+<button class="read-more-btn" onclick="toggleText(this)">Read More</button>
 </div>
 
   </div>
@@ -312,6 +339,7 @@ If you’re interested in reducing waste and getting more value from every orang
 
 </body>
 </html>
+
 
 
 
