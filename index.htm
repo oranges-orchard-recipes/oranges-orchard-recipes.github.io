@@ -147,20 +147,21 @@
   });
 </script>
 
-	<script>
+<script>
 function toggleText(button) {
   const card = button.closest(".card");
   const fullText = card.querySelector(".full-text");
 
-  if (fullText.classList.contains("hidden")) {
-    fullText.classList.remove("hidden");
-    button.textContent = "Read Less";
-  } else {
-    fullText.classList.add("hidden");
+  if (fullText.classList.contains("show")) {
+    fullText.classList.remove("show");
     button.textContent = "Read More";
+  } else {
+    fullText.classList.add("show");
+    button.textContent = "Read Less";
   }
 }
 </script>
+
 
 
 </head>
@@ -339,6 +340,7 @@ If you’re interested in reducing waste and getting more value from every orang
 
 </body>
 </html>
+
 
 
 
