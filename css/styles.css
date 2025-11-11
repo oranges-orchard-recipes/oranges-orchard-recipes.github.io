@@ -130,16 +130,22 @@ header .cta-btn:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    /* Keeps cards left-aligned, necessary when using gap */
     justify-content: flex-start; 
 }
 
+/* CARD STYLING - FIXED FOR EQUAL HEIGHTS AND 3-COLUMN LAYOUT */
 .card {
     background-color: #fff7f0;
-    /* FIX: Highly stable 3-column layout with 25px gap */
+    /* Stable 3-column layout with 25px gap */
     flex: 0 0 calc(33.333% - 17px); 
     max-width: calc(33.333% - 17px);
-    display: flex;
-    flex-direction: column;
+    
+    /* FIX: Enable equal height for the entire row and manage internal layout */
+    display: flex; 
+    flex-direction: column; /* Organize content vertically */
+    height: 100%; /* Makes all items in the row the same height */
+    
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 18px;
@@ -147,6 +153,12 @@ header .cta-btn:hover {
     transition: 0.25s ease;
 }
 .card:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0,0,0,0.12); }
+
+/* FIX: Push content down to align buttons at the bottom */
+.card p.full-text,
+.card p.preview-text {
+    flex-grow: 1; /* Allows these elements to fill vertical space */
+}
 
 .card img {
     width: 100%;
@@ -169,20 +181,16 @@ header .cta-btn:hover {
     margin-bottom: 15px;
 }
 
-/* --- AD CARD SPECIFIC STYLING (New) --- */
+/* --- AD CARD SPECIFIC STYLING --- */
 .card.ad-card {
-    /* Override standard card text/button alignment */
     padding: 0; 
     min-height: 250px; 
-    
-    /* Center the ad image inside its container */
     display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
 .card.ad-card img {
-    /* Ensure the ad image respects the 250x250 size and fits within the card */
     width: 250px; 
     height: 250px; 
     object-fit: contain; 
@@ -257,7 +265,7 @@ footer .social-links img:hover {
 /* ===== Responsive Design (Mobile and Tablet) ===== */
 
 @media (max-width: 1024px) {
-    /* TABLET: Highly stable 2-column layout with 25px gap */
+    /* TABLET: Stable 2-column layout with 25px gap */
     .card { 
         flex: 0 0 calc(50% - 13px); 
         max-width: calc(50% - 13px); 
@@ -329,16 +337,16 @@ footer .social-links img:hover {
     
     /* Ensure ad card looks correct in single column mobile view */
     .card.ad-card {
-        padding: 18px; /* Restore some padding for mobile spacing */
+        padding: 18px; 
         min-height: auto; 
     }
     
     .card.ad-card img {
-        width: 100%; /* Make the image take up max width in mobile view */
+        width: 100%; 
         height: auto;
-        max-width: 250px; /* But don't exceed the original size */
+        max-width: 250px; 
         display: block;
-        margin: 0 auto; /* Center the image */
+        margin: 0 auto; 
     }
 }
 
