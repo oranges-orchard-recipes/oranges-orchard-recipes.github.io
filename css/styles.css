@@ -130,13 +130,15 @@ header .cta-btn:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    justify-content: space-between;
+    /* FIX: Changed justify-content to avoid fractional pixel issues when using gap */
+    justify-content: flex-start;
 }
 
 .card {
     background-color: #fff7f0;
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
+    /* FIX: Updated calculation for perfect 3-column layout with 25px gap */
+    flex: 0 0 calc((100% - 50px) / 3); 
+    max-width: calc((100% - 50px) / 3);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -234,7 +236,11 @@ footer .social-links img:hover {
 /* ===== Responsive Design (Mobile and Tablet) ===== */
 
 @media (max-width: 1024px) {
-    .card { flex: 0 0 calc(50% - 20px); max-width: calc(50% - 20px); }
+    /* FIX: Updated calculation for perfect 2-column layout with 25px gap */
+    .card { 
+        flex: 0 0 calc((100% - 25px) / 2); 
+        max-width: calc((100% - 25px) / 2); 
+    }
     nav { padding: 10px 20px; }
 }
 
