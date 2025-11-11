@@ -130,15 +130,14 @@ header .cta-btn:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    /* FIX: Changed justify-content to avoid fractional pixel issues when using gap */
-    justify-content: flex-start;
+    justify-content: flex-start; 
 }
 
 .card {
     background-color: #fff7f0;
-    /* FIX: Updated calculation for perfect 3-column layout with 25px gap */
-    flex: 0 0 calc((100% - 50px) / 3); 
-    max-width: calc((100% - 50px) / 3);
+    /* FIX: Highly stable 3-column layout with 25px gap */
+    flex: 0 0 calc(33.333% - 17px); 
+    max-width: calc(33.333% - 17px);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -169,6 +168,28 @@ header .cta-btn:hover {
     text-align: justify;
     margin-bottom: 15px;
 }
+
+/* --- AD CARD SPECIFIC STYLING (New) --- */
+.card.ad-card {
+    /* Override standard card text/button alignment */
+    padding: 0; 
+    min-height: 250px; 
+    
+    /* Center the ad image inside its container */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.card.ad-card img {
+    /* Ensure the ad image respects the 250x250 size and fits within the card */
+    width: 250px; 
+    height: 250px; 
+    object-fit: contain; 
+    border-radius: 10px; 
+    margin: 0; 
+}
+
 
 /* ===== Read More Button / Hidden Text ===== */
 .read-more-btn {
@@ -236,10 +257,10 @@ footer .social-links img:hover {
 /* ===== Responsive Design (Mobile and Tablet) ===== */
 
 @media (max-width: 1024px) {
-    /* FIX: Updated calculation for perfect 2-column layout with 25px gap */
+    /* TABLET: Highly stable 2-column layout with 25px gap */
     .card { 
-        flex: 0 0 calc((100% - 25px) / 2); 
-        max-width: calc((100% - 25px) / 2); 
+        flex: 0 0 calc(50% - 13px); 
+        max-width: calc(50% - 13px); 
     }
     nav { padding: 10px 20px; }
 }
@@ -300,9 +321,24 @@ footer .social-links img:hover {
         margin-bottom: 15px;
     }
     
+    /* MOBILE: Single Column */
     .card { 
         flex: 0 0 100%; 
         max-width: 100%; 
+    }
+    
+    /* Ensure ad card looks correct in single column mobile view */
+    .card.ad-card {
+        padding: 18px; /* Restore some padding for mobile spacing */
+        min-height: auto; 
+    }
+    
+    .card.ad-card img {
+        width: 100%; /* Make the image take up max width in mobile view */
+        height: auto;
+        max-width: 250px; /* But don't exceed the original size */
+        display: block;
+        margin: 0 auto; /* Center the image */
     }
 }
 
