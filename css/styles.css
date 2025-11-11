@@ -2,11 +2,11 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 0;
-  line-height: 1.6;
-  background-color: #fffaf3;
-  color: #333;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #fffaf3;
+    color: #333;
 }
 
 a { text-decoration: none; }
@@ -14,224 +14,309 @@ img { max-width: 100%; display: block; border-radius: 10px; }
 
 /* ===== Navigation ===== */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 12px 40px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px 40px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    /* Changed flex-wrap behavior to manage mobile toggle */
+    flex-wrap: nowrap; 
+    position: relative;
+    z-index: 10;
 }
 
 nav .nav-logo img { width: 120px; height: auto; }
-nav .nav-links { display: flex; gap: 20px; }
+
+/* Default (Desktop) visibility and layout for links */
+nav .nav-links { 
+    display: flex; 
+    gap: 20px; 
+}
+
+/* New: Hamburger Icon Styling (Hidden by default on desktop) */
+.nav-toggle {
+    display: none; /* Hidden on large screens */
+    font-size: 1.8rem;
+    cursor: pointer;
+}
 
 nav a {
-  font-weight: bold;
-  color: #333;
-  padding: 8px 12px;
-  transition: color 0.3s;
+    font-weight: bold;
+    color: #333;
+    padding: 8px 12px;
+    transition: color 0.3s;
 }
 nav a:hover { color: #ff6600; }
 
 nav a:last-child {
-  background-color: #ff6600;
-  color: white;
-  border-radius: 5px;
-  padding: 8px 16px;
-  transition: background 0.3s;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    transition: background 0.3s;
 }
 nav a:last-child:hover { background-color: #ff9900; }
 
-/* ===== Header & Banner (Improved Spacing) ===== */
+/* ===== Header & Banner (Hero Section) ===== */
 header {
-  position: relative;
-  text-align: center;
-  color: white;
+    position: relative;
+    text-align: center;
+    color: white;
+    /* Gave the header a defined height to better contain the content */
+    height: 400px; 
+    overflow: hidden;
 }
 
 header .banner-img {
-  width: 100%;
-  height: 400px; /* you can change to 500px if you want it taller */
-  object-fit: cover;
-  filter: brightness(70%);
+    width: 100%;
+    /* Use 100% of the header height */
+    height: 100%; 
+    object-fit: cover;
+    filter: brightness(70%);
 }
 
 header .header-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
-  padding: 40px 60px; /* Increased padding for more air */
-  border-radius: 20px;
-  backdrop-filter: blur(6px);
-  max-width: 900px;
-  width: 90%;
-  line-height: 1.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 40px 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    max-width: 900px;
+    width: 90%;
+    line-height: 1.5;
 }
 
 header h1 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2.6rem;
-  color: #ffffff;
-  margin-bottom: 15px; /* adds gap between title and paragraph */
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.6rem;
+    color: #ffffff;
+    margin-bottom: 15px;
 }
 
 header p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem; /* small but readable */
-  color: #fff;
-  margin: 0 auto 20px auto; /* spacing between text and button */
-  max-width: 850px;
-  line-height: 1.6;
-  letter-spacing: 0.4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: #fff;
+    margin: 0 auto 20px auto;
+    max-width: 850px;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
 }
 
 header .cta-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background-color: #ff6600;
-  color: white;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: background 0.3s;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s;
 }
 
 header .cta-btn:hover {
-  background-color: #ff9900;
+    background-color: #ff9900;
 }
 
 
-/* ===== Main Content ===== */
+/* ===== Main Content / Cards ===== */
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
 }
 
 .card {
-  background-color: #fff7f0;
-  flex: 0 0 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 18px;
-  margin-bottom: 20px;
-  transition: 0.25s ease;
+    background-color: #fff7f0;
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 18px;
+    margin-bottom: 20px;
+    transition: 0.25s ease;
 }
 .card:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0,0,0,0.12); }
 
 .card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
 }
 
 .card h2 {
-  color: #ff6600;
-  font-size: 1.1rem;
-  margin: 8px 0 6px;
+    color: #ff6600;
+    font-size: 1.1rem;
+    margin: 8px 0 6px;
 }
 
 .card p {
-  padding: 0 10px 10px;
-  font-size: 0.9rem;
-  text-align: justify;
-  margin-bottom: 15px;
+    padding: 0 10px 10px;
+    font-size: 0.9rem;
+    text-align: justify;
+    margin-bottom: 15px;
 }
 
-/* ===== Read More Button ===== */
+/* ===== Read More Button / Hidden Text ===== */
 .read-more-btn {
-  align-self: center;
-  background: #ff6600;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  padding: 8px 18px;
-  cursor: pointer;
-  transition: 0.3s;
+    align-self: center;
+    background: #ff6600;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 .read-more-btn:hover { background: #ff9900; }
 
-/* ===== Hidden Text ===== */
-.full-text { display: none; }
-.full-text.visible { display: block; }
+.full-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.full-text.show {
+    display: block;
+    opacity: 1;
+}
 
 /* ===== Footer ===== */
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 footer a:hover { color: #ff9900; }
 
 footer .social-links {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
 footer .social-links img {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 footer .social-links img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
-.full-text {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.footer-author {
+    max-width: 900px;
 }
 
-.full-text.show {
-  display: block;
-  opacity: 1;
-}
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive Design (Mobile and Tablet) ===== */
+
 @media (max-width: 1024px) {
-  .card { flex: 0 0 calc(50% - 20px); max-width: calc(50% - 20px); }
-  nav { padding: 10px 20px; }
+    .card { flex: 0 0 calc(50% - 20px); max-width: calc(50% - 20px); }
+    nav { padding: 10px 20px; }
 }
 
 @media (max-width: 768px) {
-  header .banner-img { height: 320px; }
-  header h1 { font-size: 2.2rem; }
-  header p { font-size: 0.65rem; }
-  .card { flex: 0 0 100%; max-width: 100%; }
+    /* --- NAVIGATION FIXES --- */
+    nav {
+        /* Allow the nav-links to wrap below logo/toggle when they are hidden */
+        flex-wrap: wrap; 
+        padding: 10px 20px;
+    }
+    
+    /* 1. Show the hamburger icon on mobile/tablet */
+    .nav-toggle {
+        display: block;
+        order: 2; /* Keep it on the right side */
+    }
+
+    /* 2. Hide and collapse the nav links on mobile by default */
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Take full width */
+        order: 3; /* Push below the logo and toggle */
+        text-align: center;
+        margin-top: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    }
+
+    /* 3. The JavaScript 'active' class makes the menu visible */
+    nav .nav-links.active {
+        display: flex; 
+    }
+    
+    /* Adjust padding for individual links when stacked */
+    nav .nav-links a {
+        padding: 12px 0;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    /* --- HERO SECTION FIXES (Stopping the spill) --- */
+    header {
+        height: 380px; /* Reduced overall header height */
+    }
+    
+    header .header-content {
+        /* Keep absolute positioning but adjust for smaller screens */
+        padding: 20px; /* Reduced padding */
+        width: 95%; /* More generous width */
+        max-width: 95%;
+    }
+    
+    header h1 { 
+        font-size: 1.8rem; /* Smaller title */
+        margin-bottom: 10px;
+    }
+    
+    header p { 
+        font-size: 0.7rem; /* Slightly larger body text for readability */
+        margin-bottom: 15px;
+    }
+    
+    .card { 
+        flex: 0 0 100%; 
+        max-width: 100%; 
+    }
 }
 
 @media (max-width: 480px) {
-  header h1 { font-size: 1.6rem; }
-  header p { font-size: 0.6rem; }
+    header {
+        height: 350px;
+    }
+    header h1 { 
+        font-size: 1.5rem; 
+    }
+    header p { 
+        font-size: 0.65rem; 
+    }
+    header .cta-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
 }
-
-
