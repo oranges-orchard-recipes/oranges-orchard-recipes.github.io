@@ -143,6 +143,21 @@ header .cta-btn:hover {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+#new-content .featured-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+#new-content .featured-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.12);
@@ -320,3 +335,4 @@ footer .social-links img:hover {
         font-size: 0.9rem;
     }
 }
+
